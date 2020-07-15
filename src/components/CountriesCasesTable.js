@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
+// import libraries loaded in index.html
+const $ = window.$;
 
 const CountriesCasesTable = ({xl, lg}) => {
+
+    useEffect(() => {
+      $('#dataTable').DataTable();
+    }, []);// pass empty array to load the chart only once
+
     return (
         <React.Fragment>
             <div class={`col-xl-${xl} col-lg-${lg}`}>
