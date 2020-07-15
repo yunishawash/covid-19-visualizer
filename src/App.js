@@ -1,9 +1,13 @@
 import React from 'react';
-
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const App = () => {
     return (
-        <h2>Covid-19-visualizer</h2>
+        <React.Fragment>
+            <Header/>
+            <Footer/>
+        </React.Fragment>
     );
 }
 

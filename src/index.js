@@ -9,4 +9,4 @@ const Index = () => {
 }
 
 
-ReactDOM.render(<Index/>, document.querySelector("#root"));
+ReactDOM.render(<Index/>, document.querySelector("#content-wrapper"));
