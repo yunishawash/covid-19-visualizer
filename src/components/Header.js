@@ -13,7 +13,7 @@ const Header = () => {
                     <div className="btn-group btn-group-lg" role="group" aria-label="Basic example">
                         <button type="button" className="btn btn-primary">Historical</button>
                         <button type="button" className="btn btn-secondary">Summary</button>
-                        <button type="button" className="btn btn-secondary">Countries</button>
+                        <button type="button" className="btn btn-secondary ">Countries</button>
                     </div>
                 </div>
             </div>

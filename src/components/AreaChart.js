@@ -31,24 +31,25 @@ const AreaChart = ({xl, lg}) => {
         // window.Chart.defaults.global.defaultFontFamily = 'Nunito', '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
         window.Chart.defaults.global.defaultFontColor = '#858796';
 
-        let ctx = document.getElementById("myAreaChart");
+        let ctx = document.getElementById("covid-cases-evolve-chart");
+
         let myLineChart = new window.Chart(ctx, {
                 type: 'line',
                 data: {
                     labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
                     datasets: [{
-                    label: "Earnings",
-                    lineTension: 0.3,
-                    backgroundColor: "rgba(78, 115, 223, 0.05)",
-                    borderColor: "rgba(78, 115, 223, 1)",
-                    pointRadius: 3,
-                    pointBackgroundColor: "rgba(78, 115, 223, 1)",
-                    pointBorderColor: "rgba(78, 115, 223, 1)",
-                    pointHoverRadius: 3,
-                    pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
-                    pointHoverBorderColor: "rgba(78, 115, 223, 1)",
-                    pointHitRadius: 10,
-                    pointBorderWidth: 2,
+                        label: "Earnings",
+                        lineTension: 0.1,
+                        backgroundColor: "rgba(78, 115, 223, 0.05)",
+                        borderColor: "rgba(78, 115, 223, 1)",
+                        pointRadius: 3,
+                        pointBackgroundColor: "#36b9cc",
+                        pointBorderColor: "rgba(78, 115, 223, 1)",
+                        pointHoverRadius: 4,
+                        pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                        pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                        pointHitRadius: 10,
+                        pointBorderWidth: 2,
                     data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
                     }],
                 },
@@ -68,28 +69,28 @@ const AreaChart = ({xl, lg}) => {
                         unit: 'date'
                         },
                         gridLines: {
-                        display: false,
-                        drawBorder: false
+                            display: false,
+                            drawBorder: false
                         },
                         ticks: {
-                        maxTicksLimit: 7
+                            maxTicksLimit: 7
                         }
                     }],
                     yAxes: [{
                         ticks: {
-                        maxTicksLimit: 5,
-                        padding: 10,
+                            maxTicksLimit: 10,
+                            padding: 10,
                         // Include a dollar sign in the ticks
                         callback: function(value, index, values) {
-                            return '$' + number_format(value);
+                            return number_format(value);
                         }
                         },
                         gridLines: {
-                        color: "rgb(234, 236, 244)",
-                        zeroLineColor: "rgb(234, 236, 244)",
-                        drawBorder: false,
-                        borderDash: [2],
-                        zeroLineBorderDash: [2]
+                            color: "rgb(234, 236, 244)",
+                            zeroLineColor: "rgb(234, 236, 244)",
+                            drawBorder: false,
+                            borderDash: [2],
+                            zeroLineBorderDash: [2]
                         }
                     }],
                     },
@@ -119,8 +120,6 @@ const AreaChart = ({xl, lg}) => {
                     }
                 }
         });
-
-
     }
     , []); // pass empty array to load the chart only once
 
@@ -131,12 +130,12 @@ const AreaChart = ({xl, lg}) => {
             <div className="card shadow mb-4">
             {/* Card Header - Dropdown */}
             <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 className="m-0 font-weight-bold text-primary">Earnings Overview</h6>
+                <h6 className="m-0 font-weight-bold text-primary">Covid cases evolve</h6>
             </div>
             {/* Card Body */}
             <div className="card-body">
                 <div className="chart-area">
-                <canvas id="myAreaChart"></canvas>
+                <canvas id="covid-cases-evolve-chart"></canvas>
                 </div>
             </div>
             </div>
