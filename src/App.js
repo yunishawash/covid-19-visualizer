@@ -1,32 +1,30 @@
 import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
+import asyncComponent from './components/core/AsyncComponent';
+//components
 import Header from './components/Header';
-import Widget from './components/Widget';
-import AreaChart from './components/AreaChart';
-import PieChart from './components/PieChart';
-import CountriesCasesTable from './components/CountriesCasesTable';
 import Footer from './components/Footer';
-
+// async component
+const AreaChart = asyncComponent(() => import('./components/AreaChart'));
+const SummaryWidgets = asyncComponent(() => import('./components/SummaryWidgets'));
+const CountriesCasesTable = asyncComponent(() => import('./components/CountriesCasesTable'));
 
 const App = () => {
     return (
         <React.Fragment>
-            <div id="content" style={{marginTop:"50px !important"}}>
-                <div class="container-fluid">
-                    <Header/>
-                    <div className="row">
-                        <Widget xl={6} md={6} mb={4}  icon={'fas fa-heart'} label={'primary'}  value={2550} title={'NewConfirmed'} />
-                        <Widget xl={6} md={6} mb={4}  icon={'fas fa-check-circle'} label={'success'}  value={3400} title={'TotalConfirmed'} />
-                    </div>
-                    <div className="row">
-                        <AreaChart xl={6} lg={5} />
-                        <PieChart xl={6} lg={5} />
-                    </div>
-                    <div className="row">
-                        <CountriesCasesTable xl={12} lg={5} />
+            <BrowserRouter>
+                <div id="content" style={{marginTop:"50px !important"}}>
+                    <div class="container-fluid">
+                            <div>
+                                <Header/>
+                                <Route path="/" exact component={AreaChart} />
+                                <Route path="/summary" exact component={SummaryWidgets} />
+                                <Route path="/countries-table" exact component={CountriesCasesTable} />
+                            </div>
                     </div>
                 </div>
-            </div>
-            <Footer/>
+                <Footer/>
+            </BrowserRouter>
         </React.Fragment>
     );
 }

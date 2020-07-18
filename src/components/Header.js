@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -11,9 +12,9 @@ const Header = () => {
                 </div>
                 <div className="col-xl-12 col-md-6 mb-4" style={{textAlign: 'center'}}>
                     <div className="btn-group btn-group-lg" role="group" aria-label="Basic example">
-                        <button type="button" className="btn btn-primary">Historical</button>
-                        <button type="button" className="btn btn-secondary">Summary</button>
-                        <button type="button" className="btn btn-secondary ">Countries</button>
+                        <Link to='/' type="button" className="btn btn-primary">Timeline</Link>
+                        <Link to='/summary' type="button" className="btn btn-secondary">Summary</Link>
+                        <Link to='/countries-table' type="button" className="btn btn-secondary ">Countries</Link>
                     </div>
                 </div>
             </div>
