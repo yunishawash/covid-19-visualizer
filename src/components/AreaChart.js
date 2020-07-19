@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
+import { useSelector } from 'react-redux'
 import axios from 'axios';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 
 const AreaChart = ({xl = 12, lg = 12}) => {
 
-    // interval state
-    const [interval, setInterval] = useState(90);
+    // get interval state from redux 
+    const interval = useSelector(state => state.interval);
 
     const covic19CasesApi = `https://disease.sh/v3/covid-19/historical/all?lastdays=${interval}`;
 
@@ -76,10 +77,10 @@ const AreaChart = ({xl = 12, lg = 12}) => {
         <div className="row" style={{height:'650px'}}>
             {/* Area Chart */}
             <div className={`col-xl-${xl} col-lg-${lg}`}>
-                <div className="card shadow mb-4" style={{height:"600px"}}>
+                <div className="card shadow area-chart-card mb-4">
                 {/* Card Header - Dropdown */}
                 <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 className="m-0 font-weight-bold text-primary">Covid19 cases evolve</h6>
+                    <h6 className="m-0 font-weight-bold text-primary">Covid19 cases evolve in {interval} days</h6>
                 </div>
                 {/* Card Body */}
                 <div className="card-body">

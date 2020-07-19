@@ -9,7 +9,7 @@ const SummaryXYChart = ({xl, md, mb, globalSummary}) => {
 
     useEffect(() => { 
         
-        const chart = am4core.create('chartdiv', am4charts.XYChart);
+        const chart = am4core.create('summary-chart-div', am4charts.XYChart);
 
         // get the data from the api
 
@@ -112,7 +112,7 @@ const SummaryXYChart = ({xl, md, mb, globalSummary}) => {
                 {/* Card Body */}
                 <div className="card-body">
                     <div className="chart-area">
-                        <div id="chartdiv" style={{ width: "100%", height: "400px" }}></div>
+                        <div id="summary-chart-div"></div>
                     </div>
                 </div>
                 </div>

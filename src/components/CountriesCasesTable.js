@@ -28,10 +28,29 @@ const CountriesCasesTable = ({xl, lg}) => {
             {"data": "NewRecovered"},
             {"data": "TotalRecovered"}
           ],
-        //   columnDefs: [
-        //     {
-        //     }
-        //   ]
+          columnDefs: [
+            {
+                targets: 1,
+                createdCell: function (td, cellData, rowData, row, col) {
+                    $(td).css('background-color', '#F4D03F').css('color', '#fff');
+
+                }
+            },
+            {
+                targets: 3,
+                createdCell: function (td, cellData, rowData, row, col) {
+                    $(td).css('background-color', '#e35b5a').css('color', '#fff');
+
+                }
+            },
+            {
+                targets: 4,
+                createdCell: function (td, cellData, rowData, row, col) {
+                    $(td).css('background-color', '#1BBC9B').css('color', '#fff');
+
+                }
+            }
+          ]
       });
     }, [covid19SummaryApi]);// adding covid19SummaryApi for the dependency array, despite it won't be changed 
 
@@ -44,7 +63,7 @@ const CountriesCasesTable = ({xl, lg}) => {
                     </div>
                     <div className="card-body">
                     <div className="table-responsive">
-                        <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                        <table className="table table-bordered countries-cases-table" id="dataTable" width="100%" cellSpacing="0">
                         <thead>
                             <tr>
                             <th>Country Name</th>
