@@ -8,13 +8,13 @@ import Footer from './components/Footer';
 const AreaChart = asyncComponent(() => import('./components/AreaChart'));
 const SummaryWidgets = asyncComponent(() => import('./components/SummaryWidgets'));
 const CountriesCasesTable = asyncComponent(() => import('./components/CountriesCasesTable'));
-
+// App
 const App = () => {
     return (
         <React.Fragment>
             <BrowserRouter>
-                <div id="content" style={{marginTop:"50px !important"}}>
-                    <div class="container-fluid">
+                <div id="content" style={{marginTop:"50px !important", padding:"0px 250px"}}>
+                    <div className="container-fluid">
                             <div>
                                 <Header/>
                                 <Route path="/" exact component={AreaChart} />
