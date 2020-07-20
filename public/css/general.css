@@ -11,3 +11,8 @@
     color: white;
     background-color: gray  !important;
 }
+
+#content {
+    margin-top: 50px !important;
+    padding: 0px 10% !important;
+}

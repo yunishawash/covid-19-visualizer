@@ -21,7 +21,7 @@ const App = () => {
         <React.Fragment>
             <Provider store={store} >
                 <BrowserRouter>
-                    <div id="content" style={{marginTop:"50px !important", padding:"0px 250px"}}>
+                    <div id="content" >
                         <div className="container-fluid">
                                 <div>
                                     <Header/>

@@ -17,10 +17,10 @@ const Header = () => {
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
             </div>
             <div className="row">
-                <div className="col-xl-12 col-md-6 mb-4" style={{textAlign: 'center'}}>
-                    <h1>COVID-19-VISUALIZER</h1>
+                <div className="col-xl-12 col-md-12 mb-4" style={{textAlign: 'center'}}>
+                    <h1>COVID 19 VISUALIZER</h1>
                 </div>
-                <div className="col-xl-12 col-md-6 mb-4" style={{textAlign: 'center'}}>
+                <div className="col-xl-12 col-md-12 mb-4" style={{textAlign: 'center'}}>
                     <div className="btn-group btn-group-lg" role="group" aria-label="Basic example">
                         <Link to='/' onClick={() => { setSelectedTab("/") }} type="button" className={`btn ${(selectedTab === '/')?'btn-primary':'btn-secondary'} `}>Timeline</Link>
                         <div className="btn-group btn-group-lg" role="group">
