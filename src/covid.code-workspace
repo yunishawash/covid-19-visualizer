@@ -1,14 +1,7 @@
 {
-	"folders": [
+    "folders": [
         {
             "path": ".."
-        },
-        {
-            "path": "../../galaxy-tms"
         }
-    ],
-    "settings": {
-        "git.ignoreLimitWarning": true,
-        "clockify.tracking.workspaceId": "5e958f3c8ba87075e2f9e4bd"
-    }
+    ]
 }

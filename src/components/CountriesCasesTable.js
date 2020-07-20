@@ -59,7 +59,7 @@ const CountriesCasesTable = ({xl, lg}) => {
             <div className={`col-xl-${xl} col-lg-${lg}`}>
                 <div className="card shadow mb-4">
                     <div className="card-header py-3">
-                    <h6 className="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                    <h6 className="m-0 font-weight-bold text-primary">Covid19 Countries Cases </h6>
                     </div>
                     <div className="card-body">
                     <div className="table-responsive">
