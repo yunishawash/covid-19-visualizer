@@ -13,8 +13,10 @@ const SummaryWidgets = ({xl = 12, lg = 12}) => {
         // get the data from the api
         const getData = async () => {
             const {data} = await axios.get(covic19SummaryApi);
+            // updateing the globalSummary data, to pass it into childrens
             setGobalSummary(data.Global);
         };
+        // calling the sync function
         getData();
     }
     , []); // pass empty array to load the chart only once

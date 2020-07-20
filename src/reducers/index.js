@@ -1,10 +1,11 @@
 import {combineReducers} from 'redux';
 
  function intervalReducer(interval = 90, action){
+    // return the inteval value from the action 
     switch(action.type) {
         case 'CHANGE_INTERVAL': {
             return action.payload;
-        }break;
+        } break;
         default: {
             return interval
         }

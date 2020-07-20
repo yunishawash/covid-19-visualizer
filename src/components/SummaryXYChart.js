@@ -11,10 +11,8 @@ const SummaryXYChart = ({xl, md, mb, globalSummary}) => {
         
         const chart = am4core.create('summary-chart-div', am4charts.XYChart);
 
-        // get the data from the api
-
             chart.colors.step = 2;
-
+            
             chart.legend = new am4charts.Legend()
             chart.legend.position = 'top'
             chart.legend.paddingBottom = 20
@@ -42,11 +40,13 @@ const SummaryXYChart = ({xl, md, mb, globalSummary}) => {
                 bullet.interactionsEnabled = false
                 bullet.dy = 60;
                 bullet.label.text = '{valueY}'
-                bullet.label.fill = am4core.color('#ffffff')
+                bullet.label.fill = am4core.color('black')
+                bullet.label.dy = -70;
 
                 return series;
             }
 
+            // filling the charts data from the globalSummary data
             chart.data = [
                 {
                     category: 'Global Summary',
@@ -56,6 +56,7 @@ const SummaryXYChart = ({xl, md, mb, globalSummary}) => {
                 }
             ]
 
+            // setting the three columns title
             createSeries('first', 'Total Confirmed');
             createSeries('second', 'Total Recovered');
             createSeries('third', 'Total Deaths');
@@ -104,7 +105,7 @@ const SummaryXYChart = ({xl, md, mb, globalSummary}) => {
     return (
         <React.Fragment>
             <div className={`col-xl-${xl} col-lg-${md}`}>
-                <div className="card shadow mb-4" style={{height:"500px"}}>
+                <div className="card shadow mb-4 summary-xy-chart ">
                 {/* Card Header - Dropdown */}
                 <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 className="m-0 font-weight-bold text-primary">Covid19 Global Summary</h6>

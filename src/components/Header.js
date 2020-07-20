@@ -3,12 +3,16 @@ import { useDispatch } from 'react-redux'
 import {Link} from 'react-router-dom';
 
 const Header = () => {
-
+    // using the useDispatch hook from react-redux
     const changeInterval = useDispatch();
+    // create a function to dispatch change interval when click event made on the interval select menu 
     const dispatchChangeInterval = (interval) => {
-        setSelectedTab("/"); changeInterval({type:'CHANGE_INTERVAL', payload: interval});
+        // change the selected tab state
+        setSelectedTab("/");
+        // dispatch change interval action to reducers
+        changeInterval({type:'CHANGE_INTERVAL', payload: interval});
     }
-
+    
     // setting state and a function for the selected page
     const [selectedTab, setSelectedTab] = useState(window.location.pathname);
 

@@ -24,7 +24,7 @@ const App = () => {
                     <div id="content" >
                         <div className="container-fluid">
                                 <div>
-                                    <Header/>
+                                    <Header  />
                                     <Route path="/" exact component={AreaChart} />
                                     <Route path="/summary" exact component={SummaryWidgets} />
                                     <Route path="/countries-table" exact component={CountriesCasesTable} />

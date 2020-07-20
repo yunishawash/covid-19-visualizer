@@ -10,7 +10,6 @@ const CountriesCasesTable = ({xl, lg}) => {
 
     useEffect(() => {
 
-
       $('#dataTable').DataTable({
         autoWidth: false,
         ajax: {
